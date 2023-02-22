@@ -10,7 +10,7 @@ class Ensemble:
         self.estimators = {}
 
         for i in range(1, 8):
-            est = pickle.load(open(f'{i}_model.pickle', 'rb'))
+            est = pickle.load(open(f'models\{i}_model.pickle', 'rb'))
             self.estimators[i] = est
 
 
@@ -25,7 +25,7 @@ class Ensemble:
         return avg
 
 model_load_state = st.text('Loading models...')
-single_model = pickle.load(open('best_model.pickle', 'rb'))
+single_model = pickle.load(open('models\best_model.pickle', 'rb'))
 ensemble_model = Ensemble()
 model_load_state.text("Models loaded")
 
